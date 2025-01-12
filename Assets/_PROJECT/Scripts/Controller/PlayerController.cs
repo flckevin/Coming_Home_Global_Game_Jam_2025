@@ -13,12 +13,20 @@ public class PlayerController : MonoBehaviour
     [Header("Drag Setting"),Space(10)]
     [HorizontalLine(padding = 20, thickness = 4)]
     public float dragLimit;             //limit length of drag
-    public float dragFroce;             //force to add after drag
+    public float ShootForce;            //force to add after drag
     public float touchZDepth;           //depth of z
+    public bool ableToDrag;             //bool to identify whether the player able to drag
+
     //============================= PRIVATE ============================= 
     private Camera _cam;        //camera main
     private bool _isDragging;   //identifier to check whether the player is draggung the ball
     //===================================================================
+
+    void Awake()
+    {
+        //assign playe controller to this class
+        GameManager.Instance.PLR_playerController = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +44,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the controll not able to drag then stop execute
+        if(ableToDrag == false) return;
         Controller();
     }
 
@@ -53,7 +63,9 @@ public class PlayerController : MonoBehaviour
         #endregion
     }
 
-
+    /// <summary>
+    /// function to controll the dragging
+    /// </summary>
     private void Controller()
     {
         if(Input.touchCount > 0)
@@ -73,35 +85,86 @@ public class PlayerController : MonoBehaviour
             //if the player drag
             else if(_touch.phase == TouchPhase.Moved)
             {
-                DragHandle(_currentPos);
+                DragMoveHandle(_currentPos);
             }
             //if the player end or cancle touch
             else if(_touch.phase == TouchPhase.Ended || _touch.phase == TouchPhase.Canceled)
             {
-                //disable line
-                lineRend.enabled = false;
-                //set is dragging to false
-                _isDragging = false;
+                DragEndHandle(_currentPos);
             }
         }
     }
 
-    private void DragStartHanlde(Vector3 _pos)
+    #region ============== DRAG HANDLE EVENTS ==============
+
+    /// <summary>
+    /// Event on drag controller start
+    /// </summary>
+    /// <param name="_touchPos"> position of the touch </param>
+    private void DragStartHanlde(Vector3 _touchPos)
     {
         //enable line
         lineRend.enabled = true;
         //set true to is dragging
         _isDragging = true;
         //set start pos
-        lineRend.SetPosition(0,_pos);
+        lineRend.SetPosition(0,_touchPos);
         //set end pos
-        lineRend.SetPosition(1,_pos);
+        lineRend.SetPosition(1,_touchPos);
     }
 
-    private void DragHandle(Vector3 _pos)
+    /// <summary>
+    /// Event to handle on drag move
+    /// </summary>
+    /// <param name="_touchPos"> touch position </param>
+    private void DragMoveHandle(Vector3 _touchPos)
     {
+        //declare vector 3 to store start position
         Vector3 _startPos = lineRend.GetPosition(0);
-        //set end pos
-        lineRend.SetPosition(1,_pos);
+        //declare vector 3 to store shoot distance
+        Vector3 _distance = _touchPos - _startPos;
+        
+        //if the length of the line have not reach limit
+        if(_distance.magnitude < dragLimit)
+        {
+            //keep strethching the line
+            lineRend.SetPosition(1,_touchPos);
+        }
+        else // the line reaches to the limit
+        {
+            //calculate the limited line
+            Vector3 _limitedLine = _startPos + (_distance.normalized * dragLimit);
+            //set the line to be static at that position
+            lineRend.SetPosition(1,_limitedLine);
+        }
     }
+
+    /// <summary>
+    /// Event functaion to handle on drag end
+    /// </summary>
+    /// <param name="_touchPos"> touch position </param>
+    private void DragEndHandle(Vector3 _touchPos)
+    {
+        //disable line
+        lineRend.enabled = false;
+        //set is dragging to false
+        _isDragging = false;
+
+        //get start position
+        Vector3 _startPos = lineRend.GetPosition(0);
+        //get current position
+        Vector3 _currentPos = lineRend.GetPosition(1);
+
+        //calculate distance
+        Vector3 _distance = _currentPos - _startPos;
+        //calculate final force to add
+        Vector3 _finalForce = _distance * ShootForce;
+
+        //if the object does not exist then stop execute
+        if(objectRb == null) return;
+        //add force to the ball
+        objectRb.AddForce(-_finalForce,ForceMode2D.Impulse);
+    }
+
+    #endregion
 }
