@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     public bool ableToDrag;             //bool to identify whether the player able to drag
 
     //============================= PRIVATE ============================= 
-    private Camera _cam;        //camera main
-    private bool _isDragging;   //identifier to check whether the player is draggung the ball
+    private Camera _cam;                                //camera main
+    private bool _isDragging;                           //identifier to check whether the player is draggung the ball
+    private CharacterBehaviourRoot _characterBehaviour;  //behaviour of the character
     //===================================================================
 
     void Awake()
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         //============================= GET ============================= 
         //get the camera if the camera does not exist
         if(_cam == null) _cam = Camera.main;
+        _characterBehaviour = objectRb.GetComponent<CharacterBehaviourRoot>();
         //===============================================================
 
         //============================= SET ============================= 
@@ -103,12 +105,14 @@ public class PlayerController : MonoBehaviour
     /// <param name="_touchPos"> position of the touch </param>
     private void DragStartHanlde(Vector3 _touchPos)
     {
+        objectRb.velocity = Vector3.zero;
+        objectRb.isKinematic = true;
         //enable line
         lineRend.enabled = true;
         //set true to is dragging
         _isDragging = true;
         //set start pos
-        lineRend.SetPosition(0,_touchPos);
+        lineRend.SetPosition(0,objectRb.position);
         //set end pos
         lineRend.SetPosition(1,_touchPos);
     }
@@ -145,6 +149,10 @@ public class PlayerController : MonoBehaviour
     /// <param name="_touchPos"> touch position </param>
     private void DragEndHandle(Vector3 _touchPos)
     {
+        //call character behaviour on shoot
+        _characterBehaviour.Onshoot();
+        //set object kinimatic to fase
+        objectRb.isKinematic = false;
         //disable line
         lineRend.enabled = false;
         //set is dragging to false

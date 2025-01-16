@@ -10,14 +10,18 @@ public class CharacterBehaviourRoot : MonoBehaviour
     public Transform groundCheckPos;    //ground check position
     public float groundCheckRadius;     //ground radius
 
+    //=================================== PRIVATE =================================== 
     private bool _isGrounded;                       //bool to check whether the character is grounded
     private PlayerController _playerController;     //player controller
+    protected Rigidbody2D _playerRigi;                //player rigibody
+    //================================================================================
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         //========================= GET =========================
         _playerController = GameManager.Instance.PLR_playerController;
+        _playerRigi = GetComponent<Rigidbody2D>();
         //=======================================================
     }
 
@@ -35,4 +39,6 @@ public class CharacterBehaviourRoot : MonoBehaviour
         _playerController.ableToDrag = _isGrounded;
 
     }
+
+    public virtual void Onshoot(){}
 }
