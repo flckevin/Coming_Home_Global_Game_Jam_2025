@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Controller()
     {
+        //if there is touch
         if(Input.touchCount > 0)
         {
             //get the first touch position
@@ -105,14 +106,14 @@ public class PlayerController : MonoBehaviour
     /// <param name="_touchPos"> position of the touch </param>
     private void DragStartHanlde(Vector3 _touchPos)
     {
-        objectRb.velocity = Vector3.zero;
-        objectRb.isKinematic = true;
+        //objectRb.velocity = Vector3.zero;
+        //objectRb.isKinematic = true;
         //enable line
         lineRend.enabled = true;
         //set true to is dragging
         _isDragging = true;
         //set start pos
-        lineRend.SetPosition(0,objectRb.position);
+        lineRend.SetPosition(0,_touchPos);
         //set end pos
         lineRend.SetPosition(1,_touchPos);
     }

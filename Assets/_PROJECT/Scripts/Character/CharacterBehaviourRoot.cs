@@ -11,7 +11,7 @@ public class CharacterBehaviourRoot : MonoBehaviour
     public float groundCheckRadius;     //ground radius
 
     //=================================== PRIVATE =================================== 
-    private bool _isGrounded;                       //bool to check whether the character is grounded
+    //private bool _isGrounded;                       //bool to check whether the character is grounded
     private PlayerController _playerController;     //player controller
     protected Rigidbody2D _playerRigi;                //player rigibody
     //================================================================================
@@ -25,20 +25,20 @@ public class CharacterBehaviourRoot : MonoBehaviour
         //=======================================================
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        HeightDetection();
-    }
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     HeightDetection();
+    // }
 
-    void HeightDetection()
-    {
-        //detecting on ground
-        _isGrounded = Physics2D.OverlapCircle((Vector2)groundCheckPos.position,groundCheckRadius,groundMask);
-        //setting controller able to controll or
-        _playerController.ableToDrag = _isGrounded;
+    // void HeightDetection()
+    // {
+    //     //detecting on ground
+    //     _isGrounded = Physics2D.OverlapCircle((Vector2)groundCheckPos.position,groundCheckRadius,groundMask);
+    //     //setting controller able to controll or
+    //     _playerController.ableToDrag = _isGrounded;
 
-    }
+    // }
 
     public virtual void Onshoot(){}
 }

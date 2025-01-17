@@ -420,9 +420,9 @@ MonoBehaviour:
   objectRb: {fileID: 0}
   lineRend: {fileID: 1861488999}
   dragLimit: 3
-  ShootForce: 60
+  ShootForce: 2
   touchZDepth: 0
-  ableToDrag: 0
+  ableToDrag: 1
 --- !u!4 &1861488998
 Transform:
   m_ObjectHideFlags: 0
