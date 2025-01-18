@@ -29,20 +29,6 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PLR_playerController = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //============================= GET ============================= 
-        //get the camera if the camera does not exist
-        if(_cam == null) _cam = Camera.main;
-        _characterBehaviour = objectRb.GetComponent<CharacterBehaviourRoot>();
-        //===============================================================
-
-        //============================= SET ============================= 
-        ControllerInitialize();
-        //===============================================================
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -51,8 +37,14 @@ public class PlayerController : MonoBehaviour
         Controller();
     }
 
-    private void ControllerInitialize()
+    public void ControllerInitialize()
     {
+        //============================= GET ============================= 
+        //get the camera if the camera does not exist
+        if(_cam == null) _cam = Camera.main;
+        _characterBehaviour = objectRb.GetComponent<CharacterBehaviourRoot>();
+        //===============================================================
+
         #region ================== LINE SETUP ================== 
         //set the number of verticle inline
         lineRend.positionCount = 2;
@@ -63,6 +55,9 @@ public class PlayerController : MonoBehaviour
         //disable line render on start since playe rhave not drag yet
         lineRend.enabled = false;
         #endregion
+
+        //disable controller first so the player can have conversation
+        this.enabled = false;
     }
 
     /// <summary>

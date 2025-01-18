@@ -6,14 +6,17 @@ public class LevelBehaviour : MonoBehaviour
 {
     [Header("General Level Info")]
     [HorizontalLine(padding = 20, thickness =4)]
-    public Transform levelStart;        //start position
-    public Rigidbody2D[] levelObjects;  //all level objects
-    public GameObject player;           //player object
+    public Transform levelStart;            //start position
+    public Rigidbody2D[] levelObjects;      //all level objects
+    public GameObject player;               //player object
+    public SpriteRenderer rink;             //rink size
     
+    public LevelData_Scriptable lvlData;    //data of the level
+
     [Header("Cam Info")]
     [HorizontalLine(padding = 20, thickness = 4)]
-    public float[] allCamPosX;     //all position of camera in level
-    public float camDist;    //all cameara distance to move to other position
+    public float[] allCamPosX;      //all position of camera in level
+    public float camDist;           //all cameara distance to move to other position
 
     //=========================== PROPERTIES ===========================
     public int CurrentPosID
@@ -43,18 +46,14 @@ public class LevelBehaviour : MonoBehaviour
     public int _currentPosID;      //current position id
     //===============================================================
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        LevelSetup();
-    }
-
-
     /// <summary>
     /// function to setup level
     /// </summary>
-    private void LevelSetup()
+    public void LevelSetup()
     {
+        
+        
+
         //assigning current level to gamemanager
         GameManager.Instance.currentLevel = this;
 
@@ -68,6 +67,8 @@ public class LevelBehaviour : MonoBehaviour
         
         //give the controller the ball rigibody
         GameManager.Instance.PLR_playerController.objectRb = _spawnedPlayerRigi;
+
+        
         
 
     }

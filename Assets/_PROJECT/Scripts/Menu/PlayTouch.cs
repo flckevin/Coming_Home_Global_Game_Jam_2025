@@ -7,6 +7,7 @@ public class PlayTouch : MonoBehaviour
     public MainMenu mainMenu;           // main menu script
     public TextMeshProUGUI playText;    //play text to lerp color
 
+    private Sequence _seq;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlayTouch : MonoBehaviour
         //if there is play text
         if(playText != null)
         {
-            Sequence _seq = DOTween.Sequence();
+            _seq = DOTween.Sequence();
             _seq
             .Append(playText.DOColor(new Color(playText.color.r,playText.color.g,playText.color.b,20/255f),1f))
             .AppendInterval(0.1f)
@@ -33,6 +34,10 @@ public class PlayTouch : MonoBehaviour
         //if there is touch
         if(Input.touchCount > 0)
         {
+            //stop sequence
+            _seq.Pause();
+            //set the color of alpha of play text back to normal
+            playText.color = new Color(playText.color.r,playText.color.g,playText.color.b,1);
             //play
             mainMenu.Play();
             //disable this script

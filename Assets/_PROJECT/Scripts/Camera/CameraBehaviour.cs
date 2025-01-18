@@ -8,22 +8,12 @@ public class CameraBehaviour : MonoBehaviour
     private LevelBehaviour _levelBehaviour;     //level behaviour
     private Transform _player;                  //player 
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        CamInitializer();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        PosUpdater();
-    }
 
     /// <summary>
     /// function to initialize camera
     /// </summary>
-    private void CamInitializer()
+    public void CamInitializer()
     {
         //getting player
         _player = GameManager.Instance.PLR_playerController.objectRb.transform;
@@ -35,8 +25,28 @@ public class CameraBehaviour : MonoBehaviour
         _cam = Camera.main;
         
         //setup cam position
-        _cam.transform.position = new Vector2(_levelBehaviour.allCamPosX[0],_cam.transform.position.y);
+        //_cam.transform.position = new Vector2(_levelBehaviour.allCamPosX[0],_cam.transform.position.y);
+
+        
     } 
+
+    public void CamResSetter(SpriteRenderer _rink)
+    {
+         float screenRatio = (float)Screen.width / (float)Screen.height;
+        float targetRatio = _rink.bounds.size.x / _rink.bounds.size.y;
+
+        if(screenRatio >= targetRatio)
+        {
+            _cam.orthographicSize = _rink.bounds.size.y / 2;
+        }
+        else
+        {
+            float differenceInSize = targetRatio / screenRatio;
+            _cam.orthographicSize = _rink.bounds.size.y / 2 * differenceInSize;
+        }
+
+        _cam.transform.position = _rink.transform.position;
+    }
 
     /// <summary>
     /// function to update camera position based on the distance between ball and camera
