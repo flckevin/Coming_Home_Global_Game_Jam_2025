@@ -22,6 +22,6 @@ MonoBehaviour:
   - "I\u2019m this close to getting a boyfriend. Care to give me some red packets
     for good luck?"
   dialogCharacterSprite:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 51bdb483d2732aa15b05e7d50b4d3245, type: 3}
+  - {fileID: 21300000, guid: 51bdb483d2732aa15b05e7d50b4d3245, type: 3}
   hint: Long press the object and pull to aim. Release to hit.

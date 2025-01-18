@@ -52,18 +52,12 @@ public class LevelManager : MonoBehaviour
         //========================= setup controller ========================= 
         GameManager.Instance.PLR_playerController.ControllerInitialize();
 
-        //========================= setup Dialouge ========================= 
-        _dialougeSys.Initalizer(_levelBehave.lvlData.dialogs,
-                                _levelBehave.lvlData.characterName,
-                                _levelBehave.lvlData.dialogCharacterSprite);
     }
 
     private void StartSequence()
     {
          Sequence _introSeq;                //sequence intro
-         Sequence _dialougeSeq;             //dialoge sequence
         _introSeq = DOTween.Sequence();     //create new sequence
-        _dialougeSeq = DOTween.Sequence();  //createw new sequence
 
         //setting intro sequence
         _introSeq
@@ -71,9 +65,6 @@ public class LevelManager : MonoBehaviour
         .AppendInterval(1.5f)
         .Append(title.DOColor(new Color(title.color.r,title.color.g,title.color.b,0),1));
         
-        //setting dialouge sequence
-        _dialougeSeq
-        .Append(_dialougeSys.transform.DOScale(new Vector3(1,1,1),1f));
 
         //play intro sequence
         _introSeq.Play().OnComplete(() => 
@@ -82,8 +73,10 @@ public class LevelManager : MonoBehaviour
 
             //activate dialouge
             _dialougeSys.gameObject.SetActive(true);
-            //play dialouge sequence
-            _dialougeSeq.Play();
+            //========================= setup Dialouges ========================= 
+            _dialougeSys.Initalizer(_levelBehave.lvlData.dialogs,
+                                _levelBehave.lvlData.characterName,
+                                _levelBehave.lvlData.dialogCharacterSprite);
         });
         
         title.text = _levelBehave.lvlData.title;
