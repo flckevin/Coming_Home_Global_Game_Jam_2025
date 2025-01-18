@@ -5,15 +5,19 @@ using Animancer;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class MainMenu : MonoBehaviour
 {
-    [Header("ANIMATION"),Space(10)]
-    [HorizontalLine(thickness =4, padding =20)]
-    public AnimationClip playAnim;      //animation of play menu
     
     [Header("UI_Game"),Space(10)]
     [HorizontalLine(thickness =4, padding =20)]
+
+    [Header("UI_MainMenu"),Space(5)]
     public GameObject MainMenuGroup;    //main menu
+    public TextMeshProUGUI playText;    //play text
+    public TextMeshProUGUI titleText;   //title text
+
+    [Header("UI_LevelMenu"),Space(10)]
     public GameObject LevelMenuGroup;   //level menu
 
     [Header("UI_Transition"),Space(10)]
@@ -38,31 +42,30 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        //deactivate main menu
-        MainMenuGroup.SetActive(false);
-        //play animation
-        _animancer.Play(playAnim);
+       
         //transition sprite
-        StartCoroutine(TransitionTo(playAnim.length - 0.5f,new Color(1,1,1,1),3,null,LevelMenuGroup));
+        StartCoroutine(TransitionTo(0.5f,new Color(1,1,1,1),2.5f,3f,MainMenuGroup,LevelMenuGroup));
 
     }
 
-    IEnumerator TransitionTo(float _delay, Color _color, float _speed ,GameObject _origin = null, GameObject _target = null)
+    IEnumerator TransitionTo(float _delay, Color _color, float _textLerpSpeed, float _sceneTransitionSpeed ,GameObject _origin = null, GameObject _target = null)
     {
+        playText.DOColor(new Color(playText.color.r,playText.color.g,playText.color.b,0),_textLerpSpeed);
+        titleText.DOColor(new Color(playText.color.r,playText.color.g,playText.color.b,0),_textLerpSpeed);
         //wait for given second of delay
-        yield return new WaitForSeconds(_delay);
+        yield return new WaitForSeconds(_textLerpSpeed + 0.5f);
         //do tween transition screen
-        transitionScreen.DOColor(_color,_speed);
-        yield return new WaitForSeconds(_speed + 0.5f);
+        transitionScreen.DOColor(_color,_sceneTransitionSpeed);
+        yield return new WaitForSeconds(_sceneTransitionSpeed + 0.5f);
         //deactivate original
         if(_origin != null) _origin.SetActive(false);
         //activate target transitioning to
         if(_target != null) _target.SetActive(true);
         //do tween transition screen
-        transitionScreen.DOColor(new Color(_color.r,_color.g,_color.b,0),_speed);
+        transitionScreen.DOColor(new Color(_color.r,_color.g,_color.b,0),_sceneTransitionSpeed);
         //deactivate main menu world
         world_mainMenu.SetActive(false);
-
+        
     }
 
     /// <summary>
