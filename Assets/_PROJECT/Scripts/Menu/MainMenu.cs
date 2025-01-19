@@ -32,6 +32,11 @@ public class MainMenu : MonoBehaviour
     public string[] nameCharac;
     public Sprite[] characSprite;
 
+    [Header("LOADING"),Space(10)]
+    [HorizontalLine(thickness =4, padding =20)]
+    public Loading load;
+    public GameObject loadScreen;
+    
     [Header("WORLD"),Space(10)]
     [HorizontalLine(thickness =4, padding =20)]
     public GameObject world_mainMenu;            //the main menu world

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class LevelBubble : MonoBehaviour
 {
+    public MainMenu mainMenu;
     public int LevelToLoad;
     public Image locker;
     public TextMeshProUGUI levelText;
@@ -32,7 +33,10 @@ public class LevelBubble : MonoBehaviour
     public void LoadLevel()
     {
         GameData.LeveToLoad = LevelToLoad;
-        SceneManager.LoadScene(1);
+        mainMenu.loadScreen.SetActive(true);
+        mainMenu.load.enabled = true;
     }
 
 }
+
+
