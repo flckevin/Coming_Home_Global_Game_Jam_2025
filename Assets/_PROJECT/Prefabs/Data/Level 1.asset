@@ -26,5 +26,13 @@ MonoBehaviour:
   dialogCharacterSprite:
   - {fileID: 21300000, guid: 51bdb483d2732aa15b05e7d50b4d3245, type: 3}
   - {fileID: 21300000, guid: 51bdb483d2732aa15b05e7d50b4d3245, type: 3}
+  useDialougeOnEnd_ENDD: 1
+  characterName_ENDD:
+  - Nephew Linh Chi
+  dialogs_ENDD:
+  - 'Thank you uncle ! '
+  dialogCharacterSprite_ENDD:
+  - {fileID: 21300000, guid: 51bdb483d2732aa15b05e7d50b4d3245, type: 3}
+  cutsceneIMG_ENDD: {fileID: 21300000, guid: 3e7b05607b0c99733b9949209e67c59d, type: 3}
   hint: Long press the object and pull to aim. Release to hit.
   playerItem: {fileID: 21300000, guid: 99107c72b0fa6fdb1bee4dd551eec26b, type: 3}

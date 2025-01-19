@@ -24,7 +24,15 @@ MonoBehaviour:
   - "Just make sure you put the b\xE1nh ch\u01B0ng in the cooking pot in time. You\u2019ve
     got it, dearest."
   dialogCharacterSprite:
-  - {fileID: 21300000, guid: 4a5dcc7dffca82c6f87d18920dd19b44, type: 3}
-  - {fileID: 21300000, guid: 4a5dcc7dffca82c6f87d18920dd19b44, type: 3}
+  - {fileID: 21300000, guid: 7d5336a87208375a790a58afa9765e32, type: 3}
+  - {fileID: 21300000, guid: 7d5336a87208375a790a58afa9765e32, type: 3}
+  useDialougeOnEnd_ENDD: 1
+  characterName_ENDD:
+  - Granny
+  dialogs_ENDD:
+  - Yummy! The smell is mesmerizing already.
+  dialogCharacterSprite_ENDD:
+  - {fileID: 21300000, guid: 7d5336a87208375a790a58afa9765e32, type: 3}
+  cutsceneIMG_ENDD: {fileID: 21300000, guid: f7260d25f8713bbf286f3f284da78e9e, type: 3}
   hint: 
   playerItem: {fileID: 21300000, guid: ee622d21df9b36811a149239de8dcb6f, type: 3}

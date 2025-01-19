@@ -11,4 +11,7 @@ public class GameManager : QuocAnhSingleton<GameManager>
     [Header("LEVEL"),Space(10)]
     [HorizontalLine(padding = 20, thickness = 4)]
     [HideInInspector]public LevelBehaviour currentLevel;
+    [Header("AUDIO"),Space(10)]
+    [HorizontalLine(padding = 20, thickness = 4)]
+    public AudioSource src;
 }

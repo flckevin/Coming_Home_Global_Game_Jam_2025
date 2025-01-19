@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialougeSystem : MonoBehaviour
@@ -17,8 +18,6 @@ public class DialougeSystem : MonoBehaviour
     [Header("Dialouge UI")]
     [HorizontalLine(padding = 20, thickness = 4)]
     public GameObject introGroup;                       //image of background
-
-
     //========================== PRIVATE / HIDDEN ==========================
     private string[] _conversation;              //array of conversation
     private string[] _characterNames;            //array of character names
@@ -95,16 +94,24 @@ public class DialougeSystem : MonoBehaviour
         }
         else // not exceed length
         {
-            //StopAllCoroutines();
-            GameManager.Instance.PLR_playerController.enabled = true;
+            if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                //StopAllCoroutines();
+                GameManager.Instance.PLR_playerController.enabled = true;
+            }
 
             //scale down dialouge
             introGroup.gameObject.transform.DOScale(Vector3.zero,0.2f).OnComplete(() => 
             {
                 //deactivate game object
                 introGroup.gameObject.SetActive(false);
-                //start timer
-                LevelManager.Instance.StartTimer();
+                
+                if(SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    //start timer
+                    LevelManager.Instance.StartTimer();
+                }
+                
             });
 
             
@@ -130,3 +137,4 @@ public class DialougeSystem : MonoBehaviour
         
     }
 }
+

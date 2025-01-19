@@ -405,7 +405,7 @@ MonoBehaviour:
   - {fileID: 3232690007262497867}
   player: {fileID: 3321135285022751620, guid: 794a1ceb86e123a03a00c49401d0d0b0, type: 3}
   rink: {fileID: 2237091004135698139}
-  lvlData: {fileID: 11400000, guid: 556fa118eb7d12831adfb11015646709, type: 2}
+  lvlData: {fileID: 11400000, guid: a211f90631b868de494614bee4f6763c, type: 2}
   allCamPosX:
   - -0.5
   - 15.5

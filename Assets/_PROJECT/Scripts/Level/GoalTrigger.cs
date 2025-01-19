@@ -9,11 +9,19 @@ public class GoalTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!collision.CompareTag("Player")) return;
+
+        
+
         if(LevelManager.Instance._outOfTime == true)
         {
-            this.GetComponent<BoxCollider2D>().enabled = false;
+            
             return;
         }
+        this.GetComponent<Collider2D>().enabled = false;
+        int _unlocked = PlayerPrefs.GetInt("Unlocked",1);
+        _unlocked+=1;
+        PlayerPrefs.SetInt("Unlocked",_unlocked);
+
         Time.timeScale = 0.5f;
         GameManager.Instance.currentLevel.OnReachLevel();
         LevelManager.Instance._countDown.enabled = false;
@@ -35,6 +43,9 @@ public class GoalTrigger : MonoBehaviour
                 }
                 this.GetComponent<BoxCollider2D>().enabled = false;
                 GameManager.Instance.PLR_playerController.enabled =false;
+
+                
+
             }).SetUpdate(true);
 
         }).SetUpdate(true);

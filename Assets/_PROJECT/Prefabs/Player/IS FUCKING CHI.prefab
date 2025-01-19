@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1053119440713244649}
   - component: {fileID: 4363189940998055860}
   - component: {fileID: 3174835455339717616}
+  - component: {fileID: 958098157852027232}
   m_Layer: 6
   m_Name: IS FUCKING CHI
   m_TagString: Player
@@ -328,6 +329,19 @@ PolygonCollider2D:
       - {x: 0.33499998, y: -0.78999996}
       - {x: 0.355, y: -0.78}
   m_UseDelaunayMesh: 0
+--- !u!114 &958098157852027232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838073085448280113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &3961984627728429042
 GameObject:
   m_ObjectHideFlags: 0

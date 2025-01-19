@@ -19,6 +19,7 @@ public class LevelBehaviour : MonoBehaviour
     public float[] allCamPosX;      //all position of camera in level
     public float camDist;           //all cameara distance to move to other position
 
+    
     //=========================== PROPERTIES ===========================
     public int CurrentPosID
     {
@@ -80,6 +81,24 @@ public class LevelBehaviour : MonoBehaviour
         for(int i = 0 ; i < levelObjects.Length;i++)
         {
             levelObjects[i].gravityScale = 1;
+        }
+
+        if(lvlData.useDialougeOnEnd_ENDD == true)
+        {
+            LevelManager.Instance._dialougeEND.gameObject.SetActive(false);
+            LevelManager.Instance._cutScene.color = new Color(LevelManager.Instance._cutScene.color.r,LevelManager.Instance._cutScene.color.g,LevelManager.Instance._cutScene.color.b,0);
+            LevelManager.Instance._cutScene.gameObject.SetActive(true);
+            LevelManager.Instance.dialougeGroup.SetActive(true);
+
+            LevelManager.Instance._cutScene.preserveAspect = true;
+            LevelManager.Instance._cutScene.sprite = lvlData.cutsceneIMG_ENDD;
+            LevelManager.Instance._cutScene.DOColor(new Color(LevelManager.Instance._cutScene.color.r,LevelManager.Instance._cutScene.color.g,LevelManager.Instance._cutScene.color.b,1),0.5f).OnComplete(() => 
+            {
+                LevelManager.Instance._dialougeEND.gameObject.SetActive(true);
+                LevelManager.Instance._dialougeEND.Initalizer(lvlData.dialogs_ENDD,lvlData.characterName_ENDD,lvlData.dialogCharacterSprite_ENDD);
+            });
+            
+
         }
     }
 }

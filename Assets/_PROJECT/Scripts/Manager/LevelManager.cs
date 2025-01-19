@@ -18,6 +18,13 @@ public class LevelManager : QuocAnhSingleton<LevelManager>
     public GameObject looseMenu;            //loose menu
     public GameObject[] winMenuBalls;       //win menu stars
     public RawImage water;                 //water
+    
+    [Header("UI_END CUTSENBCE")]
+    [HorizontalLine(padding = 20, thickness =4)]
+    public GameObject dialougeGroup;
+    public DialougeSystem _dialougeEND;
+    public Image _cutScene;
+
     [Header("Game")]
     [HorizontalLine(padding = 20, thickness =4)]
     public TimeCountDown _countDown;

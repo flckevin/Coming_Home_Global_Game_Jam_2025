@@ -17,9 +17,16 @@ public class DamageTrigger : MonoBehaviour
         {
             _charac.shield.SetActive(false);
             _charac.poweringUp = false;
-            return;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(RenableBox());
         }
         
+    }
+
+    IEnumerator RenableBox()
+    {
+        yield return new WaitForSeconds(3);
+        this.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     IEnumerator DelayBeforeMenu()

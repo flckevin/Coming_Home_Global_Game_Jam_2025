@@ -25,6 +25,13 @@ public class MainMenu : MonoBehaviour
     [HorizontalLine(thickness =4, padding =20)]
     public Image transitionScreen;      //transition screen on menu
 
+    [Header("UI_Dialouge"),Space(10)]
+    [HorizontalLine(thickness =4, padding =20)]
+    public DialougeSystem _dialouge;
+    public string[] dialougeINTRO;
+    public string[] nameCharac;
+    public Sprite[] characSprite;
+
     [Header("WORLD"),Space(10)]
     [HorizontalLine(thickness =4, padding =20)]
     public GameObject world_mainMenu;            //the main menu world
@@ -61,6 +68,8 @@ public class MainMenu : MonoBehaviour
             .SetLoops(-1);
             
         }
+
+       
     }
 
     public void Play()
@@ -119,6 +128,12 @@ public class MainMenu : MonoBehaviour
         //activate target transitioning to
         if(_target != null) _target.SetActive(true);
         
+        if(PlayerPrefs.GetInt("newplayer",0) == 0)
+        {
+            _dialouge.gameObject.SetActive(true);
+            _dialouge.Initalizer(dialougeINTRO,nameCharac,characSprite);
+            PlayerPrefs.SetInt("newplayer",1);
+        }
 
         //do tween transition screen
         transitionScreen.DOColor(new Color(_color.r,_color.g,_color.b,0),_sceneTransitionSpeed - 1).OnComplete(() => 

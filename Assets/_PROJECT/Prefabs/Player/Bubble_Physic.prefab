@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4711020569345677052}
   - component: {fileID: 5773290658369264750}
   - component: {fileID: 4272072047610891463}
+  - component: {fileID: 123838435638291147}
   m_Layer: 6
   m_Name: bone_6
   m_TagString: Player
@@ -183,6 +184,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &123838435638291147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711607975739479580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &830128386762929164
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +212,7 @@ GameObject:
   - component: {fileID: 8881431627297513023}
   - component: {fileID: 7315527555815749286}
   - component: {fileID: 1058837414279353803}
+  - component: {fileID: 7891118538024926997}
   m_Layer: 6
   m_Name: bone_3
   m_TagString: Player
@@ -366,6 +381,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &7891118538024926997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830128386762929164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &2102209078029491035
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +409,7 @@ GameObject:
   - component: {fileID: 7425399996080211328}
   - component: {fileID: 8688376597313429854}
   - component: {fileID: 8082094284881442350}
+  - component: {fileID: 9014237241203923107}
   m_Layer: 6
   m_Name: bone_5
   m_TagString: Player
@@ -549,6 +578,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &9014237241203923107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102209078029491035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &3321135285022751620
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +821,7 @@ GameObject:
   - component: {fileID: 7822775682951644074}
   - component: {fileID: 1205645053668817557}
   - component: {fileID: 3564181728577304882}
+  - component: {fileID: 7556872122172798783}
   m_Layer: 6
   m_Name: bone_11
   m_TagString: Player
@@ -947,6 +990,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &7556872122172798783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3374817988465649810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &3491159588293561420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1102,7 @@ GameObject:
   - component: {fileID: 7185963974914370036}
   - component: {fileID: 9058004101330418764}
   - component: {fileID: 1126608796325877106}
+  - component: {fileID: 1758303125840787279}
   m_Layer: 6
   m_Name: bone_7
   m_TagString: Player
@@ -1214,6 +1271,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &1758303125840787279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624003322744798425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &3924919872808059133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1457,7 @@ GameObject:
   - component: {fileID: 2307905965284998731}
   - component: {fileID: 7852875979826895478}
   - component: {fileID: 8141256596877657743}
+  - component: {fileID: 4959657662677745162}
   m_Layer: 6
   m_Name: bone_10
   m_TagString: Player
@@ -1555,6 +1626,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &4959657662677745162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952970358841709848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &4343270102221379178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1654,7 @@ GameObject:
   - component: {fileID: 8246710450214976138}
   - component: {fileID: 2013803819512976211}
   - component: {fileID: 2193030961162652583}
+  - component: {fileID: 5938701244315280952}
   m_Layer: 6
   m_Name: bone_12
   m_TagString: Player
@@ -1738,6 +1823,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &5938701244315280952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4343270102221379178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &4383576920893271953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1851,7 @@ GameObject:
   - component: {fileID: 7278023357562721979}
   - component: {fileID: 9091186290032281458}
   - component: {fileID: 2052408462792061925}
+  - component: {fileID: 6290869189693689128}
   m_Layer: 6
   m_Name: bone_1
   m_TagString: Player
@@ -1921,6 +2020,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &6290869189693689128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383576920893271953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &4877578201146442139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2048,7 @@ GameObject:
   - component: {fileID: 6372494371933792082}
   - component: {fileID: 3394007287542074526}
   - component: {fileID: 8533286053925198684}
+  - component: {fileID: 5178395536435498108}
   m_Layer: 6
   m_Name: bone_2
   m_TagString: Player
@@ -2104,6 +2217,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &5178395536435498108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877578201146442139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &5550774187657098368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2245,7 @@ GameObject:
   - component: {fileID: 8377459290450754916}
   - component: {fileID: 5066478801015315830}
   - component: {fileID: 3244111480338172205}
+  - component: {fileID: 3212323182623880376}
   m_Layer: 6
   m_Name: bone_9
   m_TagString: Player
@@ -2287,6 +2414,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &3212323182623880376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550774187657098368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &8019297280290501402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2442,7 @@ GameObject:
   - component: {fileID: 4579812288093632541}
   - component: {fileID: 4210177466206949814}
   - component: {fileID: 1423664372114462593}
+  - component: {fileID: 4109575380579669009}
   m_Layer: 6
   m_Name: bone_8
   m_TagString: Player
@@ -2470,6 +2611,19 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &4109575380579669009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019297280290501402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}
 --- !u!1 &8899213983629090215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,6 +2639,7 @@ GameObject:
   - component: {fileID: 635857631106859390}
   - component: {fileID: 4007891375056306808}
   - component: {fileID: 2053506065025021282}
+  - component: {fileID: 8562328073502287246}
   m_Layer: 6
   m_Name: bone_4
   m_TagString: Player
@@ -2653,3 +2808,16 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 12
+--- !u!114 &8562328073502287246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899213983629090215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5118309ff881bd7888414c31ab977acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: cd0cf71dc3dc91090895c9e5fa5b82df, type: 3}

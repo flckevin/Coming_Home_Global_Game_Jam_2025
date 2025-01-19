@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
+    public Transform hint;
 
     public void ActivateMenuZoom(GameObject _target)
     {
@@ -53,5 +54,15 @@ public class GameMenu : MonoBehaviour
     {
         GameData.LeveToLoad ++;
         SceneManager.LoadScene(1);
+    }
+
+    public void Hint()
+    {
+        Sequence _hintSeq = DOTween.Sequence();
+
+        _hintSeq
+        .Append(hint.DOScale(Vector3.one,0.5f))
+        .AppendInterval(4.5f)
+        .Append(hint.DOScale(Vector3.zero,0.5f));
     }
 }

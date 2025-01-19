@@ -6,8 +6,8 @@ public class PlayTouch : MonoBehaviour
 {
     public MainMenu mainMenu;           // main menu script
     public TextMeshProUGUI playText;    //play text to lerp color
-
     private Sequence _seq;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +43,7 @@ public class PlayTouch : MonoBehaviour
             //disable this script
             this.enabled =false;
             GameData.enteredToGame = true;
+         
         }
     }
 }

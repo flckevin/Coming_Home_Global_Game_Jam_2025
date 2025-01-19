@@ -2096,8 +2096,8 @@ GameObject:
   - component: {fileID: 2051964691293047295}
   - component: {fileID: 2925202431082751919}
   - component: {fileID: 1487821365103872956}
-  - component: {fileID: 9219881778800689006}
   - component: {fileID: 4823589557163256812}
+  - component: {fileID: 3214319628796955614}
   m_Layer: 8
   m_Name: Living room BG 1st version_7
   m_TagString: Untagged
@@ -2199,8 +2199,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &9219881778800689006
-BoxCollider2D:
+--- !u!231 &4823589557163256812
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459478338282680601}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.8577597, y: -1.4259522}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.005
+  m_DampingRatio: 1
+  m_Frequency: 12
+--- !u!58 &3214319628796955614
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2208,7 +2229,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6459478338282680601}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dd5882f078e6fabcc97066e5a72afc20, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2231,40 +2252,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17190832, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 1.69}
-    newSize: {x: 1.8, y: 1.69}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.4561833, y: 1.69}
-  m_EdgeRadius: 0
---- !u!231 &4823589557163256812
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6459478338282680601}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.2370331, y: -3.8869295}
-  m_AutoConfigureDistance: 0
-  m_Distance: 0.005
-  m_DampingRatio: 1
-  m_Frequency: 12
+  m_Radius: 1
 --- !u!1 &6535455714906079535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,8 +2610,8 @@ GameObject:
   - component: {fileID: 721158100421382377}
   - component: {fileID: 4248230380833910442}
   - component: {fileID: 8049032835024927216}
-  - component: {fileID: 6489188714398026452}
   - component: {fileID: 6498036165710928378}
+  - component: {fileID: 6027595288399783567}
   m_Layer: 8
   m_Name: Living room BG 1st version_6
   m_TagString: Untagged
@@ -2723,8 +2713,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6489188714398026452
-BoxCollider2D:
+--- !u!231 &6498036165710928378
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551435392410746348}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -2.4995277, y: 0.015746832}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.005
+  m_DampingRatio: 1
+  m_Frequency: 12
+--- !u!58 &6027595288399783567
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2732,7 +2743,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7551435392410746348}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dd5882f078e6fabcc97066e5a72afc20, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2756,39 +2767,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.04, y: 2.72}
-    newSize: {x: 2.04, y: 2.72}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.04, y: 2.72}
-  m_EdgeRadius: 0
---- !u!231 &6498036165710928378
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551435392410746348}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -4.5943203, y: -2.4452305}
-  m_AutoConfigureDistance: 0
-  m_Distance: 0.005
-  m_DampingRatio: 1
-  m_Frequency: 12
+  m_Radius: 1
 --- !u!1 &7873726151799363706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,7 +3055,8 @@ GameObject:
   - component: {fileID: 2297574497964248311}
   - component: {fileID: 1811296010245414912}
   - component: {fileID: 5034566749010092603}
-  m_Layer: 0
+  - component: {fileID: 1805110269394536639}
+  m_Layer: 8
   m_Name: Ca vang animation 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3224,6 +3205,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8d75e6d2ce83a40999420547fccbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1805110269394536639
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912002962161844303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05741d64a71cd8e508a57f30d0e4e30e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9163388995427618029
 GameObject:
   m_ObjectHideFlags: 0
