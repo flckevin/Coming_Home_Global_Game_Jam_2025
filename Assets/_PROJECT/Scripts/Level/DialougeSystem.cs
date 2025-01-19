@@ -103,6 +103,8 @@ public class DialougeSystem : MonoBehaviour
             {
                 //deactivate game object
                 introGroup.gameObject.SetActive(false);
+                //start timer
+                LevelManager.Instance.StartTimer();
             });
 
             

@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Quocanh.pattern;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : QuocAnhSingleton<LevelManager>
 {
 
     [Header("UI")]
     [HorizontalLine(padding = 20, thickness =4)]
     public TextMeshProUGUI title;           //title of the level
     public DialougeSystem _dialougeSys;     //dialouge system
-
+    public GameObject winMenu;              //win menu
+    public GameObject looseMenu;            //loose menu
+    public GameObject[] winMenuBalls;       //win menu stars
+    public RawImage water;                 //water
+    [Header("Game")]
+    [HorizontalLine(padding = 20, thickness =4)]
+    public TimeCountDown _countDown;
+    public bool _outOfTime;
     //======================== PRIVATE ======================== 
     private LevelBehaviour _levelBehave;    //level behaviour
     //=========================================================
@@ -33,7 +41,7 @@ public class LevelManager : MonoBehaviour
     private void LoadLevel()
     {
         //========================= get the level ========================= 
-        GameObject levelToLoad = Resources.Load<GameObject>($"Levels/Level{GameData.levelToload}");
+        GameObject levelToLoad = Resources.Load<GameObject>($"Levels/Level{GameData.LeveToLoad}");
         //spawn out level
         GameObject _spawnedLevel = Instantiate(levelToLoad);
         //set position of the level to be at origin
@@ -52,6 +60,12 @@ public class LevelManager : MonoBehaviour
         //========================= setup controller ========================= 
         GameManager.Instance.PLR_playerController.ControllerInitialize();
 
+        //========================= setup apearrance ========================= 
+        if(GameManager.Instance.PLR_playerController._characterBehaviour._playerItemSpriteRend.sprite != null)
+        {
+            GameManager.Instance.PLR_playerController._characterBehaviour._playerItemSpriteRend.sprite = _levelBehave.lvlData.playerItem;
+        }
+        
     }
 
     private void StartSequence()
@@ -80,6 +94,13 @@ public class LevelManager : MonoBehaviour
         });
         
         title.text = _levelBehave.lvlData.title;
+    }
+    
+    public void StartTimer()
+    {
+        //========================= time countdown ========================= 
+        _countDown.remainingTime = _levelBehave.lvlData.time;
+        _countDown.enabled = true;
     }
     
 }

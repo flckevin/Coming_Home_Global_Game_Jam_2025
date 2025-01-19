@@ -42,6 +42,7 @@ public class PlayTouch : MonoBehaviour
             mainMenu.Play();
             //disable this script
             this.enabled =false;
+            GameData.enteredToGame = true;
         }
     }
 }

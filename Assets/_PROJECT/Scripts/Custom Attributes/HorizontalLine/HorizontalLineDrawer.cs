@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(HorizontalLine))]
 public class HorizontalLineDrawer : DecoratorDrawer
 {
@@ -22,3 +23,4 @@ public class HorizontalLineDrawer : DecoratorDrawer
         EditorGUI.DrawRect(position, EditorGUIUtility.isProSkin ? new Color(0.3f, 0.3f, 0.3f, 1) : new Color(0.7f, 0.7f, 0.7f, 1f));
     }
 }
+#endif

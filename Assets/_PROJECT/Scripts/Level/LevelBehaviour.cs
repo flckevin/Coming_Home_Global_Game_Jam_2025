@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class LevelBehaviour : MonoBehaviour
@@ -43,7 +44,8 @@ public class LevelBehaviour : MonoBehaviour
     //===============================================================
 
     //=========================== PRIVATE ===========================
-    public int _currentPosID;      //current position id
+    private int _currentPosID;      //current position id
+    private Vector2[] _allPos;      //all position of the object
     //===============================================================
 
     /// <summary>
@@ -51,9 +53,6 @@ public class LevelBehaviour : MonoBehaviour
     /// </summary>
     public void LevelSetup()
     {
-        
-        
-
         //assigning current level to gamemanager
         GameManager.Instance.currentLevel = this;
 
@@ -68,9 +67,20 @@ public class LevelBehaviour : MonoBehaviour
         //give the controller the ball rigibody
         GameManager.Instance.PLR_playerController.objectRb = _spawnedPlayerRigi;
 
-        
-        
+        _allPos = new Vector2[levelObjects.Length];
 
+        for(int i = 0 ; i < _allPos.Length;i++)
+        {
+            _allPos[i] = levelObjects[i].transform.localPosition;
+        }
+    }
+
+    public void OnReachLevel()
+    {
+        for(int i = 0 ; i < levelObjects.Length;i++)
+        {
+            levelObjects[i].gravityScale = 1;
+        }
     }
 }
 

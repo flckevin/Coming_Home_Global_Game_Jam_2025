@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     //============================= PRIVATE ============================= 
     private Camera _cam;                                //camera main
     private bool _isDragging;                           //identifier to check whether the player is draggung the ball
-    private CharacterBehaviourRoot _characterBehaviour;  //behaviour of the character
+    [HideInInspector]public CharacterBehaviourRoot _characterBehaviour;  //behaviour of the character
     //===================================================================
 
     void Awake()
