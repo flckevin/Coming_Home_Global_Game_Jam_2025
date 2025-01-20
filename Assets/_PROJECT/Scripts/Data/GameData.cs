@@ -5,13 +5,13 @@ using UnityEngine;
 public static class GameData 
 {
     private static int _levelToload = 1;
-    private static int _maxLevel = 6;
+    private static int _maxLevel = 8;
     public static int LeveToLoad
     {
         get{return _levelToload;}
         set
         {
-            if(_levelToload > _maxLevel)
+            if(_levelToload >= _maxLevel)
             {
                 PlayerPrefs.SetInt("Unlocked",_maxLevel);
                 _levelToload = _maxLevel;
